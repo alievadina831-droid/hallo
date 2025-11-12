@@ -1,40 +1,31 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Менің сайтым</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ойындар дүкені</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header>
-    <h1>Менің сайтым</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Басты бет</a></li>
-        <li><a href="#">Біз туралы</a></li>
-        <li><a href="#">Қызметтер</a></li>
-        <li><a href="#">Мақалалар</a></li>
-        <li><a href="#">Байланыс</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section class="welcome">
-      <h2>Қош келдіңіз!</h2>
-      <p>Бұл демонстрациялық бет. Сіз оны өзгертіп, ASP.NET-пен жұмыс істеуді бастай аласыз.</p>
-    </section>
-    <section class="services">
-      <h2>Біздің қызметтер</h2>
-      <p>Қызметтеріңіздің қысқаша сипаттамасы.</p>
-    </section>
-    <section class="hello">
-      <h2>Сәлем, әлем!</h2>
-    </section>
-  </main>
-  <footer>
-    <p>Барлық құқықтар қорғалған © 2025</p>
-  </footer>
-  <script src="assets/js/main.js"></script>
+    <header>
+        <h1>Ойындар дүкені</h1>
+        <div class="cart">Себет: <span id="cart-count">0</span></div>
+    </header>
+
+    <main>
+        <section id="games-container">
+            <!-- Игры отрисовываются JS -->
+        </section>
+    </main>
+
+    <footer>
+        <h2>Сайтты жасаушылар</h2>
+        <div class="authors-container">
+            <div class="author-card">Алиева Дина</div>
+            <div class="author-card">Асылбек Алина</div>
+        </div>
+    </footer>
+
+    <script src="assets/script.js"></script>
 </body>
 </html>
