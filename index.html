@@ -3,34 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ойындар дүкені</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <script src="assets/main.js" defer></script>
+    <title>GameStore - Ойындар дүкені</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Ойындар дүкені</h1>
-        <div class="cart">Себет: <span id="cart-count">0</span></div>
+        <div class="logo">GameStore</div>
+        <div class="user-info">
+            <div class="balance">Баланс: 200000 ₸</div>
+            <button class="cart-button">Себет</button>
+            <div class="avatar-container">
+                <img src="https://via.placeholder.com/40" alt="Аватар" class="avatar" id="avatar">
+            </div>
+        </div>
     </header>
 
-    <main>
-        <img src="csgo.jpg.jpg">
-        <div class="theme-buttons">
-            <button onclick="changeTheme('#f4f4f4')">Светлая</button>
-            <button onclick="changeTheme('#2c3e50')">Тёмная</button>
-            <button onclick="changeTheme('#ffe4c4')">Беж</button>
+    <!-- Theme Selector -->
+    <div class="theme-selector">
+        <div class="theme-btn theme-dark-blue" data-theme="#1b2838" data-theme-name="dark-blue"></div>
+        <div class="theme-btn theme-white" data-theme="#ffffff" data-theme-name="white"></div>
+        <div class="theme-btn theme-pink" data-theme="#fff0f5" data-theme-name="pink"></div>
+        <div class="theme-btn theme-beige" data-theme="#f5f5dc" data-theme-name="beige"></div>
+        <div class="theme-btn theme-purple" data-theme="#f8f0ff" data-theme-name="purple"></div>
+    </div>
+
+    <!-- Games Grid -->
+    <div class="games-container">
+        <h2 class="section-title">Ойындар</h2>
+        
+        <!-- Search and Filters -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Ойынды іздеу...">
+            <button id="searchBtn">Іздеу</button>
+        </div>
+        
+        <div class="filters-container">
+            <select id="categoryFilter">
+                <option value="all">Барлық санаттар</option>
+                <option value="RPG">RPG</option>
+                <option value="Шутер">Шутер</option>
+                <option value="Приключение">Приключение</option>
+                <option value="Хоррор">Хоррор</option>
+                <option value="Экшен">Экшен</option>
+                <option value="Симулятор">Симулятор</option>
+                <option value="Инди">Инди</option>
+                <option value="Песочница">Песочница</option>
+            </select>
+            <select id="priceFilter">
+                <option value="all">Барлық бағалар</option>
+                <option value="free">Тегін</option>
+                <option value="under2000">2000 ₸ дейін</option>
+                <option value="2000-5000">2000-5000 ₸</option>
+                <option value="over5000">5000 ₸ жоғары</option>
+            </select>
         </div>
 
-        <section id="games-container">
-        </section>
-    </main>
-
-    <footer>
-        <h2>Сайтты жасаушылар</h2>
-        <div class="authors-container">
-            <div class="author-card">Алиева Дина</div>
-            <div class="author-card">Асылбек Алина</div>
+        <div class="games-grid" id="gamesGrid">
+            <!-- Games will be inserted here by JavaScript -->
         </div>
-    </footer>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalGameTitle">Ойынды сатып алу</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="Game Image" class="modal-game-image" id="modalGameImage">
+                <div class="game-description" id="modalGameDescription"></div>
+                <div class="payment-form">
+                    <div class="form-group">
+                        <label for="cardNumber">Банк картасының нөмірі</label>
+                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+                    </div>
+                    <div class="form-group">
+                        <label for="cardName">Карта иесінің аты</label>
+                        <input type="text" id="cardName" placeholder="НУРЛАН НУРЛАНОВ">
+                    </div>
+                    <div class="form-group">
+                        <label for="expiryDate">Жарамдылық мерзімі</label>
+                        <input type="text" id="expiryDate" placeholder="АА/ЖЖ">
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" placeholder="123">
+                    </div>
+                    <button class="pay-btn" id="payButton">Төлеу</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Developers Section -->
+    <div class="developers">
+        <h2 class="developers-title">Сайт әзірлеушілері</h2>
+        <div class="developers-grid">
+            <div class="developer-card">
+                <div class="developer-name">Алиева Дина</div>
+                <div class="developer-role">HTML/CSS әзірлеушісі</div>
+            </div>
+            <div class="developer-card">
+                <div class="developer-name">Асылбек Алина</div>
+                <div class="developer-role">JavaScript әзірлеушісі</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
