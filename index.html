@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ойындар дүкені</title>
     <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/main.js" defer></script>
 </head>
 <body>
     <header>
@@ -13,8 +14,14 @@
     </header>
 
     <main>
+        <img src="csgo.jpg.jpg">
+        <div class="theme-buttons">
+            <button onclick="changeTheme('#f4f4f4')">Светлая</button>
+            <button onclick="changeTheme('#2c3e50')">Тёмная</button>
+            <button onclick="changeTheme('#ffe4c4')">Беж</button>
+        </div>
+
         <section id="games-container">
-            <!-- Игры отрисовываются JS -->
         </section>
     </main>
 
@@ -25,7 +32,5 @@
             <div class="author-card">Асылбек Алина</div>
         </div>
     </footer>
-
-    <script src="assets/script.js"></script>
 </body>
 </html>
