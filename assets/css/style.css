@@ -822,7 +822,7 @@ header {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media ( max-width: 768px) {
     .games-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
