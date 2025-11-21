@@ -1,0 +1,442 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1b2838;
+    color: #c7d5e0;
+    transition: background-color 0.3s;
+}
+
+/* Header Styles */
+header {
+    background-color: #171a21;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #66c0f4;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.balance {
+    background-color: #5c7e10;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.cart-button {
+    background-color: #66c0f4;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+}
+
+.avatar-container {
+    position: relative;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #66c0f4;
+    transition: transform 0.3s;
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+}
+
+.cart-counter {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    display: none;
+}
+
+/* Section Title */
+.section-title {
+    margin-bottom: 20px;
+    color: #66c0f4;
+    font-size: 24px;
+}
+
+/* Search and Filters */
+.search-container {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+#searchInput {
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #3c5a78;
+    background-color: #1b2838;
+    color: #c7d5e0;
+    flex-grow: 1;
+}
+
+#searchBtn {
+    padding: 10px 20px;
+    background-color: #66c0f4;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.filters-container {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+#categoryFilter, #priceFilter {
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #3c5a78;
+    background-color: #1b2838;
+    color: #c7d5e0;
+}
+
+/* Theme Selector */
+.theme-selector {
+    margin: 20px 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.theme-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #c7d5e0;
+}
+
+.theme-blue { background-color: #1b2838; }
+.theme-dark { background-color: #0f1419; }
+.theme-purple { background-color: #2d1b47; }
+.theme-green { background-color: #1a3c2e; }
+
+/* Games Grid */
+.games-container {
+    padding: 20px 30px;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.game-card {
+    background: linear-gradient(135deg, #2a475e 0%, #1b2838 100%);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #3c5a78;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.game-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.game-info {
+    padding: 15px;
+}
+
+.game-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.game-category {
+    font-size: 12px;
+    color: #66c0f4;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.game-description {
+    font-size: 13px;
+    color: #8f98a0;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.game-price {
+    color: #beee11;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.add-to-cart-btn {
+    background-color: #66c0f4;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #4a9cd4;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #2a475e;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    padding: 20px;
+    background-color: #171a21;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-modal {
+    font-size: 24px;
+    cursor: pointer;
+    color: #c7d5e0;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #66c0f4;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.modal-game-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.game-description-full {
+    font-size: 14px;
+    color: #c7d5e0;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #8f98a0;
+    font-weight: 500;
+}
+
+.form-group input {
+    padding: 12px;
+    border-radius: 3px;
+    border: 1px solid #3c5a78;
+    background-color: #1b2838;
+    color: #c7d5e0;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #66c0f4;
+}
+
+.pay-btn {
+    background-color: #5c7e10;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.pay-btn:hover {
+    background-color: #6b8e23;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #5c7e10;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    z-index: 1001;
+    animation: slideIn 0.3s ease-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Developers Section */
+.developers {
+    padding: 40px 30px;
+    background-color: #171a21;
+    margin-top: 50px;
+}
+
+.developers-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #66c0f4;
+    font-size: 28px;
+}
+
+.developers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.developer-card {
+    background: linear-gradient(135deg, #2a475e 0%, #1b2838 100%);
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+    border: 1px solid #3c5a78;
+}
+
+.developer-card:hover {
+    transform: translateY(-5px);
+}
+
+.developer-name {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.developer-role {
+    font-size: 14px;
+    color: #66c0f4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .user-info {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    
+    .search-container {
+        flex-direction: column;
+    }
+    
+    .filters-container {
+        flex-direction: column;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+}
